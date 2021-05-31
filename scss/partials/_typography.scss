@@ -1,0 +1,46 @@
+/* Typography --------------------------------------------------------------- */
+
+@import url("https://use.typekit.net/nnq8tly.css");
+
+@font-face {
+  font-family: Didot;
+  src: url(../fonts/Didot-01.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Didot;
+  src: url(../fonts/Didot-Italic-02.ttf);
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Didot;
+  src: url(../fonts/Didot-Bold-03.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+html, body{
+  font-family: proxima-nova, sans-serif;
+  font-size: 14px;
+}
+
+h1{
+  font-weight: 600;
+  font-size: 30px;
+  @media (min-width: 768px){
+    font-size: 4.5vw;
+  }
+  @media (min-width: 1200px){
+    font-size: 54px;
+  }
+  line-height: 1.185em;
+}
+
+h2{
+  font-family: Didot, serif;
+  font-weight: normal;
+}

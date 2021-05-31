@@ -1,0 +1,115 @@
+/* Typography --------------------------------------------------------------- */
+@import url("https://use.typekit.net/nnq8tly.css");
+@font-face {
+  font-family: Didot;
+  src: url(../fonts/Didot-01.ttf);
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Didot;
+  src: url(../fonts/Didot-Italic-02.ttf);
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: Didot;
+  src: url(../fonts/Didot-Bold-03.ttf);
+  font-style: normal;
+  font-weight: bold;
+}
+html, body {
+  font-family: proxima-nova, sans-serif;
+  font-size: 14px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.185em;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.5vw;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 54px;
+  }
+}
+
+h2 {
+  font-family: Didot, serif;
+  font-weight: normal;
+}
+
+.header {
+  color: #ebebeb;
+  background: #222222;
+  background: -moz-radial-gradient(top right, ellipse cover, #461e0e 0%, #222222 50%);
+  background: -webkit-radial-gradient(top right, ellipse cover, #461e0e 0%, #222222 50%);
+  background: radial-gradient(ellipse at top right, #461e0e 0%, #222222 50%);
+  height: 50vh;
+  border-bottom-left-radius: 13.333vw;
+}
+.header .title {
+  display: flex;
+  height: calc(100% - 77px);
+  align-items: center;
+  margin: 0 3em;
+  max-width: 50%;
+}
+.header .title h1 {
+  color: #ebebeb;
+}
+.header + div, .header + section {
+  padding-top: 30vh;
+  margin-top: -30vh;
+  position: relative;
+  z-index: -1;
+  background-color: white;
+}
+.header + div:before, .header + div:after, .header + section:before, .header + section:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 30vh;
+  right: 0;
+}
+.header + div:before, .header + section:before {
+  background-color: #222222;
+}
+.header + div:after, .header + section:after {
+  border-top-right-radius: 50px;
+  background-color: inherit;
+}
+
+.orange-section {
+  color: white;
+  background: #ff6a31;
+  background: -moz-radial-gradient(top left, ellipse cover, #ff6a31 0%, #f5b752 66%);
+  background: -webkit-radial-gradient(top left, ellipse cover, #ff6a31 0%, #f5b752 66%);
+  background: radial-gradient(ellipse at top left, #ff6a31 0%, #f5b752 66%);
+  min-height: 100vh;
+  border-bottom-left-radius: 13.333vw;
+  padding: 0 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.orange-section:after {
+  background: #f5b752 !important;
+}
+.orange-section img {
+  margin: 0 auto;
+  max-width: 948px;
+  width: 82.666vw;
+}
+.orange-section h1 {
+  color: white;
+  max-width: 60%;
+}
+
+/*# sourceMappingURL=main.css.map */

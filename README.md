@@ -4,4 +4,4 @@ The **Pw21** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This READ
 
 ## Description
 
-PetersenWest Custome Theme 2021
+PetersenWest Custom Theme 2021

@@ -17,6 +17,7 @@
     {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
     {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
     {% do assets.addCss('theme://css/custom.css', 98) %}
+    {% do assets.addCss('theme://css-compiled/main.css', 97) %}
 {% endblock %}
 
 {% block javascripts %}
@@ -34,8 +35,7 @@
     <div class="header">
         <div class="wrapper padding">
             <a class="logo left" href="{{ home_url|e }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title|e }}
+                {{ media['user://themes/pw21/images/PetersenWest-logo.svg'].html("logo", config.site.title|e)|raw }}
             </a>
             {% block header_navigation %}
             <nav class="main-nav">
@@ -43,10 +43,23 @@
             </nav>
             {% endblock %}
         </div>
+        {% if page.header.title_text %}
+            <div class="title">
+                <h1>
+                    {{ page.header.title_text|e }}
+                </h1>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
 
 {% block body %}
+    {% if page.header.home_section %}
+        <div class="orange-section">
+             {{ media['user://pages/images/union-shape.svg'].html()|raw }}
+             <h1>{{ page.header.home_section|e }}</h1>
+        </div>
+    {% endif %}
     <section id="body">
         <div class="wrapper padding">
         {% block content %}{% endblock %}
