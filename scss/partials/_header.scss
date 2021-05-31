@@ -1,0 +1,50 @@
+/* Header ------------------------------------------------------------------- */
+
+$headerColor: #ebebeb;
+$curveOverlap: 30vh;
+$largeCurve: 13.333vw;
+$smallCurve: 50px;
+
+.header{
+  color: $headerColor;
+  background: #222222;
+  background: -moz-radial-gradient(top right, ellipse cover,  #461e0e 0%, #222222 50%);
+  background: -webkit-radial-gradient(top right, ellipse cover,  #461e0e 0%,#222222 50%);
+  background: radial-gradient(ellipse at top right,  #461e0e 0%,#222222 50%);
+  height: 40vw;
+  min-height: 50vh;
+  border-bottom-left-radius: $largeCurve;
+  .title{
+    display: flex;
+    height: calc(100% - 77px);
+    align-items: center;
+    margin: 0 3em;
+    max-width: 50em;
+    h1{
+      color: $headerColor;
+    }
+  }
+  & + div, & + section{
+    padding-top: $curveOverlap;
+    margin-top: -$curveOverlap;
+    position: relative;
+    z-index: -1;
+    background-color: white;
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      width: $smallCurve;
+      height: $smallCurve;
+      top: $curveOverlap;
+      right: 0;
+    }
+    &:before{
+      background-color: #222222;
+    }
+    &:after{
+      border-top-right-radius: $smallCurve;
+      background-color: inherit;
+    }
+  }
+}
