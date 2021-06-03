@@ -1,30 +1,9 @@
+@import "vendor/_bootstrap-grid.scss";
+
 @import "mixins/_functions";
+
 @import "partials/_navigation";
 @import "partials/_typography";
 @import "partials/_header";
-
-.orange-section{
-  &:after{
-    background: #f5b752 !important;
-  }
-  img{
-    margin: 0 auto;
-    max-width: 948px;
-    width: 82.666vw;
-  }
-  h1{ 
-    color: white; 
-    max-width: 45rem;
-  }
-  color: white;
-  background: #ff6a31;
-  background: -moz-radial-gradient(top left, ellipse cover,  #ff6a31 0%, #f5b752 66%);
-  background: -webkit-radial-gradient(top left, ellipse cover,  #ff6a31 0%,#f5b752 66%);
-  background: radial-gradient(ellipse at top left,  #ff6a31 0%,#f5b752 66%);
-  min-height: 100vh + $curveOverlap;
-  border-bottom-left-radius: 13.333vw; 
-  padding: 0 3em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
+@import "partials/_orange-section";
+@import "partials/_portfolio";

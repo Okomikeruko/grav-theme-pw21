@@ -1,0 +1,33 @@
+{% extends "partials/base.html.twig" %}
+{% block content %}
+  <section>
+    <div class="wrapper padding">
+      {{ page.content|raw }}
+      {% if (page.collection|count) >= 1 %}
+        <div class="row">
+          {% for p in page.collection %}
+            <div class="col-lg-6">
+              <div class="portfolio-holder">
+                <a href="{{ p.url|e }}">
+                  {{ p.media[p.header.image].html()|raw }}
+                </a>
+                {% if p.header.synopsis %}
+                  <p>{{ p.header.synopsis }}</p>
+                {% endif %}
+                {% if p.header.taxonomy and (p.header.taxonomy.tag|count) >= 1 %}
+                  <small>
+                    {% for t in p.header.taxonomy.tag %}
+                      <a href="{{ p.parent.url|e }}/tag:{{ t|underscorize }}">
+                        {{ t|e }}
+                      </a>
+                    {% endfor %}
+                  </small>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}

@@ -54,17 +54,7 @@
 {% endblock %}
 
 {% block body %}
-    {% if page.header.home_section %}
-        <div class="orange-section">
-             {{ media['user://pages/images/union-shape.svg'].html()|raw }}
-             <h1>{{ page.header.home_section|e }}</h1>
-        </div>
-    {% endif %}
-    <section id="body">
-        <div class="wrapper padding">
-        {% block content %}{% endblock %}
-        </div>
-    </section>
+    {% block content %}{% endblock %}
 {% endblock %}
 
 {% block footer %}

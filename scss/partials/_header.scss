@@ -8,12 +8,20 @@ $smallCurve: 50px;
 .header{
   color: $headerColor;
   background: #222222;
-  background: -moz-radial-gradient(top right, ellipse cover,  #461e0e 0%, #222222 50%);
-  background: -webkit-radial-gradient(top right, ellipse cover,  #461e0e 0%,#222222 50%);
-  background: radial-gradient(ellipse at top right,  #461e0e 0%,#222222 50%);
+  @include radial-gradient(#461e0e 0%, #222222 50%, top right);
   height: 40vw;
   min-height: 50vh;
   border-bottom-left-radius: $largeCurve;
+  a {
+    color: #fff;
+  }
+  .logo{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+  }
+  .padding{
+    padding: 1rem 0;
+  }
   .title{
     display: flex;
     height: calc(100% - 77px);

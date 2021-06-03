@@ -5,7 +5,44 @@ $navColor: white;
 nav.main-nav{
   ul{
     text-align: right;
+    letter-spacing: -1em;
+    margin: 0;
+    padding: 0;
+    
     li{
+      display: inline-block;
+      letter-spacing: normal;
+      position: relative;
+      
+      ul{
+        position: absolute;
+        background-color: #1F8DD6;
+        min-width: 100%;
+        text-align: left;
+        z-index: 999;
+        display: none;
+        
+        li{
+          display: block;
+        }
+        
+        ul{
+          left: 100%;
+          top: 0;
+        }
+      }
+      
+      a{
+        position: relative;
+        display: block;
+        line-height: 45px;
+        color: #fff;
+        padding: 0 20px;
+        white-space: nowrap;
+        &, &:hover{
+          text-decoration: none;
+        }
+      }
       & > a{
         padding: 0;
         margin: 0 20px;
@@ -17,6 +54,9 @@ nav.main-nav{
         border-bottom: 1px solid transparent;
         transition: all 300ms linear;
       }
+      &:hover > ul {
+        display: block;
+      }
       &:hover, &.selected{
         & > a {
           background-color: transparent;
@@ -26,5 +66,20 @@ nav.main-nav{
         }
       }
     }
+  }
+  
+  .has-children > a{
+    padding-right: 30px;
+    &:after{
+      font-family: FontAwesome;
+      content: '\f107';
+      position: absolute;
+      display: inline-block;
+      right: 8px;
+      top: 0;
+    }
+  }
+  .has-children .has-children > a:after {
+    content: '\f105';
   }
 }
