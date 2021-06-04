@@ -12,6 +12,8 @@ $smallCurve: 50px;
   height: 40vw;
   min-height: 50vh;
   border-bottom-left-radius: $largeCurve;
+  position: relative;
+  z-index: 1;
   a {
     color: #fff;
   }
@@ -36,7 +38,6 @@ $smallCurve: 50px;
     padding-top: $curveOverlap;
     margin-top: -$curveOverlap;
     position: relative;
-    z-index: -1;
     background-color: white;
     &:before,
     &:after{

@@ -1337,6 +1337,60 @@
     --bs-gutter-y: 3rem;
   }
 }
+/* Core --------------------------------------------------------------------- */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #606d6e;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #454B4D;
+}
+
+a {
+  color: #1F8CD6;
+  text-decoration: none;
+}
+a:hover {
+  color: #175E91;
+}
+
+pre {
+  background: #F0F0F0;
+  margin: 1rem 0;
+  border-radius: 2px;
+}
+
+blockquote {
+  border-left: 10px solid #eee;
+  margin: 0;
+  padding: 0 2rem;
+}
+
+/* Utilities ---------------------------------------------------------------- */
+.wrapper {
+  margin: 0 3rem;
+}
+
+.padding {
+  padding: 3rem 1rem;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 /* Navigation --------------------------------------------------------------- */
 nav.main-nav ul {
   text-align: right;
@@ -1455,6 +1509,18 @@ h2 {
   font-weight: normal;
 }
 
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
 /* Header ------------------------------------------------------------------- */
 .header {
   color: #ebebeb;
@@ -1465,6 +1531,8 @@ h2 {
   height: 40vw;
   min-height: 50vh;
   border-bottom-left-radius: 13.333vw;
+  position: relative;
+  z-index: 1;
 }
 .header a {
   color: #fff;
@@ -1490,7 +1558,6 @@ h2 {
   padding-top: 30vh;
   margin-top: -30vh;
   position: relative;
-  z-index: -1;
   background-color: white;
 }
 .header + div:before, .header + div:after, .header + section:before, .header + section:after {

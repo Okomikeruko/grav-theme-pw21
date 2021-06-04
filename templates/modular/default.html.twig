@@ -15,7 +15,7 @@
               {% if p.header.taxonomy and (p.header.taxonomy.tag|count) >= 1 %}
                 <small>
                   {% for t in p.header.taxonomy.tag %}
-                    <a href="{{ p.parent.url|e }}/tag:{{ t|underscorize }}">
+                    <a href="{{ p.parent.url|e }}/tag:{{ t|e }}">
                       {{ t|e }}
                     </a>
                   {% endfor %}
