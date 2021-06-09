@@ -1,0 +1,19 @@
+/* Footer ------------------------------------------------------------------- */
+
+.footer {
+  background-color: #222222;
+  font-weight: 700;
+  font-size: 1.428em;
+  &, a, p, span{
+    color: #B9B9B9;
+  }
+  
+  .footer-menu{
+    padding: 2rem 0;
+  }
+  
+  .footer-menu-header{
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+}

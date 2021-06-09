@@ -1,0 +1,56 @@
+/* Sections ----------------------------------------------------------- */
+
+$orange-start: #ff6a31;
+$orange-end: #f5b752;
+$green-start: #61BDAB;
+$green-end: #7ED085;
+
+.orange-section{
+  &:after{
+    background: $orange-end !important;
+  }
+  h1, h2, h3, h4, h5, h6, p, span{ 
+    color: white; 
+  }
+  h1{
+    max-width: 45rem;
+  }
+  color: white;
+  background: $orange-end;
+  @include radial-gradient( $orange-start 0%, $orange-end 66%, top left );
+}
+.green-section{
+  &:after{
+    background: $green-end !important;
+  }
+  h1, h2, h3, h4, h5, h6, p, span{ 
+    color: white;
+  }
+  color: white;
+  background: $green-end;
+  @include radial-gradient( $green-start 0%, $green-end 66%, top left );
+}
+.section-swoop{
+  position: relative;
+  min-height: 100vh + $curveOverlap;
+  border-bottom-left-radius: 13.333vw;
+  z-index: 1;
+  & + div, & + section{
+    position: relative;
+    padding-top: $curveOverlap;
+    margin-top: -$curveOverlap;
+  }
+}
+section{
+  img{
+    margin: 0 auto;
+    max-width: 948px;
+    width: 100%;
+    display: block;
+  }
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}

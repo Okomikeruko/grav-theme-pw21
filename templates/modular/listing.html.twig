@@ -1,0 +1,51 @@
+<section class="{{ page.header.module_classes}}">
+  <div class="wrapper padding">
+    {{ content|raw }}
+    {% if (page.collection|count) >= 1 %}
+      <div class="row">
+        {% for p in page.collection %}
+          <div class="col-lg-6">
+            <div class="portfolio-holder">
+              <a href="{{ p.url|e }}">
+                {{ p.media[p.header.image].html()|raw }}
+              </a>
+              {% if p.header.synopsis %}
+                <p>{{ p.header.synopsis }}</p>
+              {% endif %}
+              {% if p.header.taxonomy and (p.header.taxonomy.tag|count) >= 1 %}
+                <small>
+                  {% for t in p.header.taxonomy.tag %}
+                    <a href="{{ (p.parent.parent.url ~ "/tag" ~ system.param_sep ~ t)|e }}">
+                      {{ t|e }}
+                    </a>
+                  {% endfor %}
+                </small>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% if page.header.content.pagination %}
+        {% set itemsInCollection = page.children|length %}
+        {% set itemsPerPage = page.header.content.limit %}
+        {% set pagesInCollection = (itemsInCollection / itemsPerPage)|round(0, 'ceil') %}
+        {% set currentPage = uri.param('page')|default('1') %}
+        {% if pagesInCollection > 1 %}
+          <ul class="pagination">
+            {% for i in range(1, pagesInCollection) %}
+              <li {% if currentPage is same as('' ~ i ~ '') %} class="currentpage" {% endif %}>
+                <a href= "{{ page.parent.url ~ '/page' ~ system.param_sep ~ i }}">{{ i }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endif %}
+    {% endif %}
+    {% if page.header.bottom_link %}
+      {% include "partials/bottom_link.html.twig" with {
+                   'url':page.header.bottom_link.url, 
+                  'text':page.header.bottom_link.text
+      } %}
+    {% endif %}
+  </div>
+</section>

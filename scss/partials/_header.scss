@@ -13,16 +13,17 @@ $smallCurve: 50px;
   min-height: 50vh;
   border-bottom-left-radius: $largeCurve;
   position: relative;
-  z-index: 1;
+  z-index: 5;
   a {
     color: #fff;
   }
   .logo{
-    font-size: 1.7rem;
+    font-size: 2.3rem;
     text-transform: uppercase;
   }
   .padding{
-    padding: 1rem 0;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
   .title{
     display: flex;

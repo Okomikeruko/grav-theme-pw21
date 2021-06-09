@@ -1391,6 +1391,40 @@ blockquote {
   float: right;
 }
 
+img.small {
+  max-width: 94px;
+}
+
+.bottom-link {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #222;
+  font-size: 1.42em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.bottom-link img, .bottom-link svg {
+  margin: 0;
+  width: auto;
+  display: inline;
+}
+.bottom-link img.button-chevron, .bottom-link svg.button-chevron {
+  margin-left: 1em;
+}
+.bottom-link img.button-stack, .bottom-link svg.button-stack {
+  margin-left: 3em;
+}
+.bottom-link:hover {
+  color: #175E91;
+}
+.bottom-link:hover .button-chevron rect {
+  fill: #175E91;
+}
+.bottom-link:hover .button-stack g {
+  stroke: #175E91;
+}
+
 /* Navigation --------------------------------------------------------------- */
 nav.main-nav ul {
   text-align: right;
@@ -1509,6 +1543,10 @@ h2 {
   font-weight: normal;
 }
 
+.huge {
+  font-size: 6em;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1532,17 +1570,18 @@ h2 {
   min-height: 50vh;
   border-bottom-left-radius: 13.333vw;
   position: relative;
-  z-index: 1;
+  z-index: 5;
 }
 .header a {
   color: #fff;
 }
 .header .logo {
-  font-size: 1.7rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
 }
 .header .padding {
-  padding: 1rem 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 .header .title {
   display: flex;
@@ -1576,33 +1615,100 @@ h2 {
   background-color: inherit;
 }
 
-/* Orange Section ----------------------------------------------------------- */
+/* Footer ------------------------------------------------------------------- */
+.footer {
+  background-color: #222222;
+  font-weight: 700;
+  font-size: 1.428em;
+}
+.footer, .footer a, .footer p, .footer span {
+  color: #B9B9B9;
+}
+.footer .footer-menu {
+  padding: 2rem 0;
+}
+.footer .footer-menu-header {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+/* Sections ----------------------------------------------------------- */
 .orange-section {
   color: white;
-  background: #ff6a31;
+  background: #f5b752;
   background: -moz-radial-gradient(top left, ellipse cover, #ff6a31 0%, #f5b752 66%);
   background: -webkit-radial-gradient(top left, ellipse cover, #ff6a31 0%, #f5b752 66%);
   background: radial-gradient(ellipse at top left, #ff6a31 0%, #f5b752 66%);
-  min-height: 130vh;
-  border-bottom-left-radius: 13.333vw;
 }
 .orange-section:after {
   background: #f5b752 !important;
 }
-.orange-section img {
+.orange-section h1, .orange-section h2, .orange-section h3, .orange-section h4, .orange-section h5, .orange-section h6, .orange-section p, .orange-section span {
+  color: white;
+}
+.orange-section h1 {
+  max-width: 45rem;
+}
+
+.green-section {
+  color: white;
+  background: #7ED085;
+  background: -moz-radial-gradient(top left, ellipse cover, #61BDAB 0%, #7ED085 66%);
+  background: -webkit-radial-gradient(top left, ellipse cover, #61BDAB 0%, #7ED085 66%);
+  background: radial-gradient(ellipse at top left, #61BDAB 0%, #7ED085 66%);
+}
+.green-section:after {
+  background: #7ED085 !important;
+}
+.green-section h1, .green-section h2, .green-section h3, .green-section h4, .green-section h5, .green-section h6, .green-section p, .green-section span {
+  color: white;
+}
+
+.section-swoop {
+  position: relative;
+  min-height: 130vh;
+  border-bottom-left-radius: 13.333vw;
+  z-index: 1;
+}
+.section-swoop + div, .section-swoop + section {
+  position: relative;
+  padding-top: 30vh;
+  margin-top: -30vh;
+}
+
+section img {
   margin: 0 auto;
   max-width: 948px;
   width: 100%;
   display: block;
 }
-.orange-section h1 {
-  color: white;
-  max-width: 45rem;
-}
-.orange-section > div {
+section > div {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+/* Pagination --------------------------------------------------------------- */
+ul.pagination {
+  display: block;
+  list-style-type: none;
+  margin: 0 auto;
+}
+ul.pagination li {
+  float: left;
+  text-align: center;
+  margin: 0 1em;
+}
+ul.pagination li a {
+  display: block;
+  border: 1px solid black;
+  border-radius: 50%;
+  line-height: 2.5em;
+  width: 2.5em;
+  height: 2.5em;
+}
+ul.pagination li.currentpage a {
+  border-color: green;
 }
 
 /* Portfolio ---------------------------------------------------------------- */

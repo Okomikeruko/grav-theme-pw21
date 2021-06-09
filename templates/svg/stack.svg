@@ -1,0 +1,16 @@
+<svg class="button-stack" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <g id="Group_6085" data-name="Group 6085" transform="translate(-1584.342 -4046.992)">
+    <g id="Rectangle_2063" data-name="Rectangle 2063" transform="translate(1600.342 4062.992)" fill="#fff" stroke="#222" stroke-width="1">
+      <rect width="34" height="34" stroke="none"/>
+      <rect x="0.5" y="0.5" width="33" height="33" fill="none"/>
+    </g>
+    <g id="Rectangle_2064" data-name="Rectangle 2064" transform="translate(1592.342 4054.992)" fill="#fff" stroke="#222" stroke-width="1">
+      <rect width="34" height="34" stroke="none"/>
+      <rect x="0.5" y="0.5" width="33" height="33" fill="none"/>
+    </g>
+    <g id="Rectangle_2065" data-name="Rectangle 2065" transform="translate(1584.342 4046.992)" fill="#fff" stroke="#222" stroke-width="1">
+      <rect width="34" height="34" stroke="none"/>
+      <rect x="0.5" y="0.5" width="33" height="33" fill="none"/>
+    </g>
+  </g>
+</svg>

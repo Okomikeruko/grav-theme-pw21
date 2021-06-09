@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="wrapper padding">
+    <a class="logo left" href="{{ home_url|e }}">
+      {{ media['user://themes/pw21/images/PetersenWest-logo.svg'].html("logo", config.site.title|e)|raw }}
+    </a>
+    {% block header_navigation %}
+      <nav class="main-nav">
+        {% include 'partials/navigation.html.twig' %}
+      </nav>
+    {% endblock %}
+  </div>
+  {% if page.header.title_text %}
+    <div class="title">
+      <h1>
+        {{ page.header.title_text|e }}
+      </h1>
+    </div>
+  {% endif %}
+</header>

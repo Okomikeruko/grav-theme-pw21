@@ -1,17 +1,54 @@
 /* Utilities ---------------------------------------------------------------- */
 
 .wrapper {
-    margin: 0 3rem;
+  margin: 0 3rem;
 }
 
 .padding {
-    padding: 3rem 1rem;
+  padding: 3rem 1rem;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .right {
-    float: right
+  float: right
+}
+
+img.small {
+  max-width: 94px;
+}
+
+$button-hover-color: #175E91;
+
+.bottom-link{
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #222;
+  font-size: 1.42em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  img, svg{
+    margin: 0;
+    width: auto;
+    display: inline;
+    &.button-chevron{
+      margin-left: 1em;
+    }
+    &.button-stack{
+      margin-left: 3em;
+    }
+  }
+  
+  &:hover{
+    color: $button-hover-color;
+    & .button-chevron rect {
+      fill: $button-hover-color;
+    }
+    & .button-stack g {
+      stroke: $button-hover-color;
+    }
+  }
 }
