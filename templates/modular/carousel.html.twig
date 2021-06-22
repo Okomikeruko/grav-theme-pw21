@@ -1,0 +1,38 @@
+<section class="{{ page.header.module_classes }}">
+  <div class="wrapper padding">
+    {{ content|raw }}
+    {% if (page.collection|count) >= 1 %}
+      {% set carousel = "[owl-carousel]" %}
+        {% for p in page.collection %}
+          {% set carousel = carousel~"<div style=\"background: url('"~p.media[p.header.gallery.image].url|e~"') 50% 50%; height: 350px; background-size: cover; color:#fff\">" %}
+            {% if p.header.gallery.title %}
+              {% set carousel = carousel~"<h2>"~p.header.gallery.title~"</h2>" %}
+            {% endif %}
+            {% if p.header.gallery.body %}
+              {% set carousel = carousel~"<p>"~p.header.gallery.body~"</p>" %}
+            {% endif %}
+          {% set carousel = carousel~"</div>" %}
+        {% endfor %}
+      {% set carousel = carousel~"[/owl-carousel]" %}
+      {{ carousel|shortcodes|raw }}
+      <script>
+        $(document).ready(function(){
+          $(".owl-carousel").owlCarousel({
+            "items": 1.5,
+            "margin": 10,
+            "loop": true,
+            "dots": false,
+            "nav": false,
+            "center": true
+          });
+        });
+      </script>
+    {% endif %}
+    {% if page.header.bottom_link %}
+      {% include "partials/bottom_link.html.twig" with {
+                   'url':page.header.bottom_link.url, 
+                  'text':page.header.bottom_link.text
+      } %}
+    {% endif %}
+  </div>
+</section>

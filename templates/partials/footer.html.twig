@@ -11,34 +11,48 @@
         <div class="footer-menu">
           <span class="footer-menu-header">Location</span><br>
           <span itemprop="address">
-            <span itemprop="streetAddress">170 S Mountain Way Dr. #102</span><br>
-            <span itemprop="addressLocality">Orem</span>, <span itemprop="addressRegion">UT</span> <span itemprop="postalCoad">84058</span>
+            <span itemprop="streetAddress">{{ site.company.address.street_address|e }}</span><br>
+            <span itemprop="addressLocality">{{ site.company.address.city|e }}</span>, 
+            <span itemprop="addressRegion">{{ site.company.address.state|e }}</span> 
+            <span itemprop="postalCode">{{ site.company.address.zip|e }}</span>
           </span>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="footer-menu">
           <span class="footer-menu-header">Contact</span><br>
-          <a href="tel:+13854479646"><span itemprop="telephone">385-447-9646</span></a><br>
-          <a href="mailto:hello@petersenwest.com"><span itemprop="email">hello@petersenwest.com</span></a>
+          <a href="tel:+1-{{ site.company.phone|trim|replace({'(': '', ')': '', ' ': '-', '.': '-'}) }}">
+            <span itemprop="telephone">{{ site.company.phone|e }}</span>
+          </a><br>
+          <a href="mailto:{{ site.company.email|e }}">
+            <span itemprop="email">{{ site.company.email|e }}</span>
+          </a>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="footer-menu">
           <span class="footer-menu-header">Connect</span><br>
-          <a href="https://www.instagram.com/petersenwest/?hl=en" 
+          <a href="{{ site.company.social.instagram }}"
              rel="noopener noreferrer nofollow"
              target="_blank">Instagram</a>
           <br>
-          <a href="https://www.facebook.com/PetersenWest-1816340708579920/" 
+          <a href="{{ site.company.social.facebook }}"
              rel="noopener noreferrer nofollow"
              target="_blank">Facebook</a>
           <br>
-          <a href="https://www.linkedin.com/company/petersenwest" 
+          <a href="{{ site.company.social.linkedin }}"
              rel="noopener noreferrer nofollow"
              target="_blank">LinkedIn</a>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="sub-footer">
+    <div class="wrapper">
+      <p>
+        &copy;2007-{{ "now"|date("Y") }} PetersenWest. All Rights Reserved.
+        <a href="/privacy-policy">Privacy Policy</a>
+      </p>
     </div>
   </div>
 </footer>

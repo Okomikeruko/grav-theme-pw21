@@ -1,5 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    {{ page.content|raw }}
+  <div>
+    <section class="{{ page.header.section_classes|e }}">
+      {{ page.content|raw }}
+    </section> 
+  </div>
 {% endblock %}

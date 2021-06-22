@@ -1425,6 +1425,35 @@ img.small {
   stroke: #175E91;
 }
 
+.owl-carousel {
+  touch-action: manipulation;
+  position: relative;
+  padding-bottom: 3em;
+}
+.owl-carousel:after, .owl-carousel:before {
+  height: 100%;
+  width: 133px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: "";
+}
+.owl-carousel:before {
+  left: 0;
+  background: -moz-linear-gradient(right, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#ffffff", endColorstr="#00ffffff",GradientType=1 );
+  z-index: 1;
+}
+.owl-carousel:after {
+  right: 0;
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, white 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#00ffffff", endColorstr="#ffffff",GradientType=1 );
+}
+
 /* Navigation --------------------------------------------------------------- */
 nav.main-nav ul {
   text-align: right;
@@ -1619,7 +1648,7 @@ h2 {
 .footer {
   background-color: #222222;
   font-weight: 700;
-  font-size: 1.428em;
+  font-size: 1.2em;
 }
 .footer, .footer a, .footer p, .footer span {
   color: #B9B9B9;
@@ -1630,6 +1659,12 @@ h2 {
 .footer .footer-menu-header {
   color: #ffffff;
   text-transform: uppercase;
+}
+.footer .sub-footer {
+  background-color: #333333;
+  font-size: 1rem;
+  padding: 0.5px 0;
+  font-weight: 400;
 }
 
 /* Sections ----------------------------------------------------------- */
